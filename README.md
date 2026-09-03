@@ -1,55 +1,252 @@
-# Topu Kumar Mondol
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topu Kumar Mondol — Backend &amp; AI Engineering</title>
+<meta name="description" content="ECE undergraduate at RUET building backend and AI systems in Python — agentic pipelines, retrieval, and the infrastructure around them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFBF9;
+    --ink:#14181D;
+    --muted:#5A6672;
+    --rule:#DFE3E6;
+    --accent:#1F5C6B;
+    --measure:68ch;
+  }
 
-B.Sc. in Electrical & Computer Engineering, Rajshahi University of Engineering & Technology (RUET) — expected October 2028.
+  *{box-sizing:border-box;}
 
-I build backend and AI systems in Python: agentic pipelines, retrieval, and the infrastructure around them.
+  html{-webkit-text-size-adjust:100%;}
 
-**[Download my resume (PDF)](Topu_Kumar_Mondol_Resume.pdf)**
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    padding:clamp(1.75rem,5vw,5rem) clamp(1.25rem,5vw,2rem);
+  }
 
----
+  .page{max-width:var(--measure);margin:0 auto;}
 
-## Projects
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(31,92,107,.35);}
+  a:hover{border-bottom-color:var(--accent);}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
 
-### OpsIQ — AI-Powered Ops Intelligence Platform
-`Python` `FastAPI` `LangGraph` `LangChain` `FAISS` `PostgreSQL`
+  /* Masthead */
+  .name{
+    font-family:"IBM Plex Serif",Georgia,serif;
+    font-weight:600;
+    font-size:clamp(2rem,7vw,3rem);
+    line-height:1.08;
+    letter-spacing:-.02em;
+    margin:0 0 .6rem;
+  }
 
-A 5-node LangGraph service that ingests production logs and generates structured postmortems. Log analysis and timeline extraction run in parallel and join at root-cause inference, with FAISS retrieval grounding each step. Verified by replaying three documented production incidents (GitLab 2017, Cloudflare 2019, AWS 2020) through the pipeline and asserting category matches against the published postmortems. Deployed through a GitHub Actions pipeline that runs the full test suite on every push.
+  .standfirst{
+    font-size:clamp(1.05rem,2.6vw,1.2rem);
+    color:var(--ink);
+    margin:0 0 1.5rem;
+    max-width:52ch;
+  }
 
-[Repository](https://github.com/topukumar538)
+  .facts{
+    color:var(--muted);
+    font-size:.94rem;
+    margin:0 0 1.75rem;
+  }
+  .facts p{margin:0 0 .2rem;}
 
-### ContentPlatform — Personalized Recommendation Engine
-`FastAPI` `PostgreSQL` `SQLAlchemy 2.0` `Docker` `Pytest` `Locust`
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem 1.25rem;
+    font-size:.94rem;
+    padding-bottom:1.75rem;
+    border-bottom:2px solid var(--ink);
+  }
 
-A slot-based recommendation feed with softmax sampling and time-decayed interaction weights, built so pagination stays stable and no single category dominates. Load tested with Locust from 10 to 500 concurrent users; sustained a 99% success rate at 100 users (~800ms p95), with the failure at 500 root-caused to database connection pool exhaustion.
+  .resume-link{
+    font-weight:600;
+  }
 
-[Repository](https://github.com/topukumar538)
+  /* Sections */
+  section{padding-top:2.5rem;}
 
----
+  h2{
+    font-family:"IBM Plex Serif",Georgia,serif;
+    font-weight:500;
+    font-size:1.05rem;
+    color:var(--muted);
+    margin:0 0 1.5rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+  }
 
-## Technical Skills
+  /* Projects */
+  .project{margin-bottom:2.5rem;}
+  .project:last-child{margin-bottom:0;}
 
-**Languages** — Python, C++, C, SQL
+  .project h3{
+    font-size:1.18rem;
+    font-weight:600;
+    line-height:1.3;
+    margin:0 0 .3rem;
+  }
 
-**AI / ML** — LangChain, LangGraph, RAG, retrieval systems, vector databases (FAISS), embeddings, LLM integration
+  .stack{
+    color:var(--muted);
+    font-size:.88rem;
+    line-height:1.5;
+    margin:0 0 .9rem;
+  }
 
-**Backend & Databases** — FastAPI, SQLAlchemy 2.0, PostgreSQL, REST APIs, JWT auth, APScheduler
+  .project ul{
+    margin:0;
+    padding-left:1.15rem;
+  }
+  .project li{
+    margin-bottom:.65rem;
+    padding-left:.2rem;
+  }
+  .project li::marker{color:var(--accent);}
 
-**Cloud & Infrastructure** — Docker, CI/CD (GitHub Actions), Hugging Face Spaces, Neon (managed PostgreSQL)
+  /* Skills */
+  .skills{
+    display:grid;
+    grid-template-columns:11rem 1fr;
+    gap:.9rem 1.5rem;
+    font-size:.96rem;
+  }
+  .skills dt{font-weight:600;}
+  .skills dd{margin:0;color:var(--muted);}
 
-**Tools** — Git, GitHub, Pytest, Locust, Pydantic
+  @media (max-width:34rem){
+    .skills{grid-template-columns:1fr;gap:.25rem;}
+    .skills dd{margin-bottom:.9rem;}
+  }
 
----
+  /* Certifications + closing */
+  .cert{margin-bottom:1rem;}
+  .cert p{margin:0;}
+  .cert .issuer{color:var(--muted);font-size:.9rem;}
 
-## Certifications
+  .closing{
+    margin-top:3rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+    color:var(--muted);
+    font-size:.94rem;
+  }
 
-- **Machine Learning Specialization** — DeepLearning.AI / Andrew Ng (Coursera), December 2025
-- **CS50x: Introduction to Computer Science** — HarvardX (edX), October 2024
-- **CS50P: Introduction to Programming with Python** — HarvardX (edX), 2024
+  @media print{
+    body{background:#fff;padding:0;font-size:11pt;}
+    a{color:var(--ink);border:0;}
+    section{padding-top:1.25rem;}
+    .project{margin-bottom:1.25rem;}
+    .project li{margin-bottom:.3rem;}
+  }
+</style>
+</head>
+<body>
+<main class="page">
 
----
+  <header>
+    <h1 class="name">Topu Kumar Mondol</h1>
+    <p class="standfirst">I build backend and AI systems in Python — agentic pipelines, retrieval, and the infrastructure that keeps them running.</p>
 
-## Contact
+    <div class="facts">
+      <p>B.Sc. in Electrical &amp; Computer Engineering, Rajshahi University of Engineering &amp; Technology</p>
+      <p>Graduating October 2028 · CGPA 3.51 / 4.00 · Rajshahi, Bangladesh</p>
+    </div>
 
-- Email — topukumar538@gmail.com
-- LinkedIn — [topu-kumar-mondol](https://linkedin.com/in/topu-kumar-mondol)
-- GitHub — [topukumar538](https://github.com/topukumar538)
+    <div class="contact">
+      <a class="resume-link" href="Topu_Kumar_Mondol_Resume.pdf">Resume (PDF)</a>
+      <a href="mailto:topukumar538@gmail.com">topukumar538@gmail.com</a>
+      <a href="https://github.com/topukumar538">GitHub</a>
+      <a href="https://linkedin.com/in/topu-kumar-mondol">LinkedIn</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3>OpsIQ — AI-powered ops intelligence platform</h3>
+      <p class="stack">Python · FastAPI · LangGraph · LangChain · FAISS · PostgreSQL (async SQLAlchemy) · 2026</p>
+      <ul>
+        <li>Verified root-cause classification accuracy by replaying three documented production incidents — GitLab 2017, Cloudflare 2019, AWS 2020 — through the pipeline, asserting both category matches and domain-specific terms drawn from the published postmortems.</li>
+        <li>Built a 5-node LangGraph DAG where log analysis and timeline extraction run in parallel and join at root-cause inference, over three temperature-tuned LLM instances (0.7 chat, 0.3 RAG, 0.1 postmortem) isolating generative, grounded and deterministic tasks.</li>
+        <li>Replaced per-request session lookups with stateless HMAC-SHA256 tokens carrying a version field, so bumping one database column invalidates every issued token without the server storing any of them.</li>
+        <li>Made restarts transparent by persisting FAISS stores to disk under per-user, per-session paths and mirroring conversation state to PostgreSQL, restoring summary buffers and recent messages on reconnect.</li>
+        <li>Automated the release path with a GitHub Actions pipeline that runs the 123-test suite on every push and deploys only when tests pass, replacing manual redeploys.</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>ContentPlatform — personalized recommendation engine</h3>
+      <p class="stack">FastAPI · PostgreSQL · SQLAlchemy 2.0 · JWT + OTP auth · APScheduler · Docker · Pytest · Locust · 2025</p>
+      <ul>
+        <li>Sustained a 99% success rate at 100 concurrent users (~800ms p95) by load testing with Locust from 10 to 500 users, and root-caused the failure at 500 as database connection pool exhaustion.</li>
+        <li>Stopped any one category from dominating the feed by capping it at 3 of the top 5 slots per page, using a slot-based ranker with softmax sampling at temperature 0.7 and 10% random injection.</li>
+        <li>Kept recommendations following current behaviour rather than old activity by decaying interaction weights (view 1, like 3, save 5) on a 30-day constant, recomputed for every user in hourly batches.</li>
+        <li>Delivered a full 20 posts per page with zero repeats across the entire feed by building all pages in one pass against a shared seen-set, seeded so pagination stays stable.</li>
+        <li>Cut admin block latency from up to 7 days to a single request by re-checking user state in the database on every authenticated request instead of trusting the JWT.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Technical skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt>
+      <dd>Python, C++, C, SQL</dd>
+
+      <dt>AI and ML</dt>
+      <dd>LangChain, LangGraph, RAG, retrieval systems, vector databases (FAISS), embeddings, LLM integration</dd>
+
+      <dt>Backend and databases</dt>
+      <dd>FastAPI, SQLAlchemy 2.0, PostgreSQL, REST APIs, JWT auth, APScheduler</dd>
+
+      <dt>Cloud and infrastructure</dt>
+      <dd>Docker, CI/CD with GitHub Actions, Hugging Face Spaces, Neon managed PostgreSQL, containerized deployment</dd>
+
+      <dt>Tools</dt>
+      <dd>Git, GitHub, Pytest, Locust, Pydantic</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+
+    <div class="cert">
+      <p>Machine Learning Specialization</p>
+      <p class="issuer">DeepLearning.AI / Andrew Ng, Coursera · December 2025</p>
+    </div>
+
+    <div class="cert">
+      <p>CS50x: Introduction to Computer Science</p>
+      <p class="issuer">HarvardX, edX · October 2024</p>
+    </div>
+
+    <div class="cert">
+      <p>CS50P: Introduction to Programming with Python</p>
+      <p class="issuer">HarvardX, edX · 2024</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Algorithms</h2>
+    <p>Solved 400+ data structures and algorithms problems across LeetCode, GeeksforGeeks and Codeforces, spanning arrays, trees, graphs, binary search and dynamic programming.</p>
+  </section>
+
+  <p class="closing">Open to Summer 2027 software engineering internships. Reach me at <a href="mailto:topukumar538@gmail.com">topukumar538@gmail.com</a>.</p>
+
+</main>
+</body>
+</html>
